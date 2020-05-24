@@ -43,9 +43,6 @@ const userSchema = new mongoose.Schema(
     },
   }
 );
-userSchema.statics.build = (attrs: UserAttrs) => {
-  return new User(attrs);
-};
 
 userSchema.pre('save', async function (done) {
   if (this.isModified('password')) {
@@ -54,6 +51,10 @@ userSchema.pre('save', async function (done) {
   }
   done();
 });
+
+userSchema.statics.build = (attrs: UserAttrs) => {
+  return new User(attrs);
+};
 
 const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
 
