@@ -22,7 +22,8 @@ _Note: Latest versions of Docker Desktop are shipping with minikube pre-installe
 **_Note: Run `docker login` command in your local system to login with your docker credentials before your proceed with the below changes._**
 
 1. Make the following changes to the `src/app.js` to folders **auth, orders, payments, tickets**.
-   **_Comment:_**
+
+**_Comment:_**
 
 ```
 app.use(
@@ -45,7 +46,8 @@ app.use(
 ```
 
 2. Make the following change to `api/build-client.js` to folder **client**.
-   **_Comment:_**
+
+**_Comment:_**
 
 ```
     return axios.create({
