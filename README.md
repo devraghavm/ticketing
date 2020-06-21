@@ -6,7 +6,7 @@ Please fork this project into your own repository and make changes in your own r
 
 ** DO NOT CHECK IN YOUR CHANGES TO THIS REPOSITORY**
 
-## Running in Dev
+## Running on Local
 
 You need the following software installed on your local machine to run this application locally:
 
