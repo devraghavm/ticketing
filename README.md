@@ -17,9 +17,33 @@ You need the following software installed on your local machine to run this appl
 
 _Note: Latest versions of Docker Desktop are shipping with minikube pre-installed you do not have to install minikube unless you are running older version. In any case, Minikube can be installed from [here](https://kubernetes.io/docs/tasks/tools/install-minikube/)._
 
-### Changes to code
+### Cloning the code
 
-**_Note: Run `docker login` command in your local system to login with your docker credentials before your proceed with the below changes._**
+Run the below command to code the code into your local system based on your git version.
+
+1. If running git version >= 2.13
+
+```
+git clone --recurse-submodules https://github.com/devraghavm/ticketing.git
+```
+
+2. If running git version between 1.6.5 and 2.12
+
+```
+git clone --recursive https://github.com/devraghavm/ticketing.git
+```
+
+3. If running git version < 1.6.5
+
+```
+git clone https://github.com/devraghavm/ticketing.git
+cd ticketing
+git submodule update --init --recursive
+```
+
+**_Note: Run `docker login` command in your local system to login with your docker credentials before proceeding further._**
+
+### Changes to code
 
 1. Make the following changes to the `src/app.js` to folders **auth, orders, payments, tickets**.
 
@@ -83,7 +107,7 @@ docker push <your-docker-id>/<folder-name/service-name>
 
 **_Note: Do not forget the `.` in the end of the `docker build` command and make sure you are in the respective folder when you are running these commands. Example: `auth`_**
 
-2. Issue the below command to startup your application.
+2. Issue the below command to startup your application from the root project directory `ticketing` in your terminal.
 
 ```
 skaffold dev
