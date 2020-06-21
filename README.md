@@ -1,4 +1,4 @@
-# ticketing microservices example
+# Ticketing Microservices Example
 
 This application is example e-commerce application that was completely built ground up using Microservices architecture.
 
